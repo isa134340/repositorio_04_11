@@ -2,17 +2,15 @@ library(Biostrings)
 
 secuencias_1<-readDNAStringSet("01_datos _crudos/DivergentGlobins.fasta")
 
-library(msa)
-
-ali_clustal<- msa(secuencias, method = "ClustalW")
+ali_clustal<- msa(secuencias_1, method = "ClustalW")
 print(ali_clustal)
 
-pdf("03_resultados/ali_clustal")
+pdf("03_resultados/ali_clustal.pdf")
 
 
-ali_mus<- msa(secuencias, method ="Muscle")
+ali_mus<- msa(secuencias_1, method ="Muscle")
 ali_mus
-pdf("03_resultados/ali_mus")
+pdf("03_resultados/ali_mus.pdf")
 
 
 #arbol
@@ -36,15 +34,16 @@ install.packages("ape")
 
 library(ape)
 #crear arboles
-arbol_c <- nj(m_c) # más cercanos
+arbol_cl <- nj(m_c) # más cercanos
 plot (arbol_c)
 dev.off()
 
-arbol_m <- nj(m_m) 
+arbol_mus<- nj(m_m) 
 plot(arbol_m) 
 dev.off()
 
-pdf("03_resultados/arbol_c.pdf")
+pdf("03_resultados/arbol_cl.pdf")
 
 
-pdf("03_resultados/arbol_m.pdf")
+pdf("03_resultados/arbol_mus.pdf")
+
