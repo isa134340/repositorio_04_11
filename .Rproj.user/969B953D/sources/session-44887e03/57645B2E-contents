@@ -1,2 +1,5 @@
 library(Biostrings)
-readDNAStringSet("01_datos _crudos/DivergentGlobins.fasta")
+secuencias<-readDNAStringSet("01_datos _crudos/DivergentGlobins.fasta")
+library(ggmsa)
+alilineamiento<-ggmsa(secuencias, seq_name = TRUE, char_width = 0.5) + 
+  geom_seqlogo(color = "Chemistry_AA") + geom_msaBar()
