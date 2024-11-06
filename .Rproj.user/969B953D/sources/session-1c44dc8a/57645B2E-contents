@@ -39,7 +39,7 @@ plot (arbol_c)
 dev.off()
 
 arbol_mus<- nj(m_m) 
-plot(arbol_m) 
+plot(arbol_mus) 
 dev.off()
 
 pdf("03_resultados/arbol_cl.pdf")
@@ -47,3 +47,4 @@ pdf("03_resultados/arbol_cl.pdf")
 
 pdf("03_resultados/arbol_mus.pdf")
 
+#arbol
